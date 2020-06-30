@@ -66,17 +66,18 @@ module.exports = {
   mode: "development", // mode: 'production',
 
   entry: {
-    main: ["@babel/polyfill", "./javascript/main.js"],
-    independent: "./javascript/independent.js",
+    entry: ["@babel/polyfill", "./App.jsx"],
+    //! main: ["@babel/polyfill", "./javascript/main.js"],
+    //! independent: "./javascript/independent.js",
   },
   output: {
     filename: filename(`js`),
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "production"),
   },
 
   resolve: {
     // extensions by default
-    extensions: [".js", ".json", ".png", "jpg", ".jpeg"],
+    extensions: [".js", ".json", ".jsx", ".png", "jpg", ".jpeg"],
     alias: {
       "@fonts": path.resolve(__dirname, "src/models"),
       "@": path.resolve(__dirname, "src/models"),
@@ -98,11 +99,11 @@ module.exports = {
       },
     }),
     new CleanWebpackPlugin(), // clean output.path
-    new CopyWebpackPlugin([
-      {
-        patterns: [{ from: "", to: "" }],
-      },
-    ]),
+    //! new CopyWebpackPlugin([
+    //!   {
+    //!     patterns: [{ from: "", to: "" }],
+    //!   },
+    //! ]),
     new MiniCssExtractPlugin({
       filename: filename(`css`),
     }),
