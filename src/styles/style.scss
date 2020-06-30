@@ -1,0 +1,87 @@
+@use 'checkWebpack';
+
+// EXAMPLES
+
+//? 1 scss - like regular css
+//? 2 sass - python style
+
+// --1-- variables
+$color-black: black;
+
+body { 
+    font: $color-black;
+}
+
+// --2-- nesting 
+
+nav {
+    ul {
+        margin: 0;
+    }
+}
+
+// --3-- modules and partitions
+
+//_base.scss >> some styles
+// styles.scss
+@use 'base';
+
+// --4-- [mixin]
+
+@mixin transform($property) {
+    //...   
+}
+.box { 
+    @include transform(rotate(30deg)) 
+}
+
+// --4.1-- [function] 
+
+@function colorReturn($color) {
+    @if $color == black {
+        @return (color: $color);
+    } @else if $color == white {
+        @return (color: $color);
+    } 
+}
+
+// --5-- extending 
+
+%message-shared {
+    border:  none;
+}
+
+.message {
+    @extend %message-shared;
+}
+
+// --6-- calculations
+
+.container {
+    width: 600px*3;
+}
+
+// --7-- conditions
+
+@mixin hello($direction) {
+    @if $direction == up {
+
+    } @else if $direction == down {
+
+    } @else if $direction == right {
+
+    } @else if $direction == left {
+
+    }
+}
+
+.color {
+
+    &-color {
+        color: $color;
+    }
+
+}
+
+
+

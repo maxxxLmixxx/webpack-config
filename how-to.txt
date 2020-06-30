@@ -1,0 +1,61 @@
+https://github.com/vladilenm/webpack-2020
+
+1. npm i -D webpack [webpack-cli] webpack-dev-server
+npx webpack-dev-server
+
+*. for webpack-cli:
+ -- global install
+ -- npx webpack
+
+/*
+"private": true,
+*/
+
+2. plugins:: 
+
+npm i -D html-webpack-plugin
+add class:: const HTMLWebpackPlugin = require('html-webpack-plugin')
+
+npm i -D clean-webpack-plugin
+add class:: const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+
+npm i -D copy-webpack-plugin
+add class:: const {CopyWebpackPlugin} = require('copy-webpack-plugin)
+
+npm i -D mini-css-extract-plugin
+add class:: const CopyWebpackPlugin = require('copy-webpack-plugin')
+
+npm i -D terser-webpack-plugin
+const TerserWebpackPlugin = require('terser-webpack-plugin')
+
+npm i -D optimize-css-assets-webpack-plugin
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+
+3. loaders:: 
+
+npm i -D style-loader css-loader  ;
+npm i -D file-loader              ;
+npm i -D node-sass sass-loader    ;
+npm i -D babel-loader @babel/core ; 
+  npm i -D @babel/preset-env
+  >> package.json: "browserslist": "> 0.25%, not dead"
+  npm i -D @babel/polyfill
+  ----
+  npm i -D @babel/preset-typescript
+  ----
+  npm i -D @babel/preset-react
+  npm i react react-dom
+
+// npm i -D eslint-loader
+// nmp i -D webpack-bundle-analyzer
+
+4. other:: 
+
+npm i -D cross-env
+
+/*
+npm i normalize.css 
+@import '~normalize.css';
+ install at node_modules
+ not at dependencies
+*/
